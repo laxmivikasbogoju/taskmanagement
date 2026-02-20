@@ -31,10 +31,12 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="auth-wrapper">
+    <div className="auth-card">
       <h2>Register</h2>
 
       <form onSubmit={handleSubmit}>
+        <div className="input-group">
         <input
           type="email"
           placeholder="Email"
@@ -42,7 +44,9 @@ function Register() {
             setForm({ ...form, email: e.target.value })
           }
         />
-
+        
+        </div>
+        <div className="input-group">
         <input
           type="password"
           placeholder="Password"
@@ -50,14 +54,20 @@ function Register() {
             setForm({ ...form, password: e.target.value })
           }
         />
+        
+        </div>
 
-        <button type="submit">Register</button>
+        <button className="btn btn-register" type="submit">
+  Register
+</button>
       </form>
 
       <p onClick={() => navigate("/")}>
         Already have an account? Login
       </p>
     </div>
+  </div>
+
   );
 }
 

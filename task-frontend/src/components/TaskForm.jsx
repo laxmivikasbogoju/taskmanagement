@@ -24,23 +24,32 @@ function TaskForm({ refresh }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="Title"
-        onChange={(e) => setTask({ ...task, title: e.target.value })} />
+  <input
+    placeholder="Title"
+    onChange={(e) => setTask({ ...task, title: e.target.value })}
+  />
 
-      <input placeholder="Description"
-        onChange={(e) => setTask({ ...task, description: e.target.value })} />
+  <input
+    placeholder="Description"
+    onChange={(e) => setTask({ ...task, description: e.target.value })}
+  />
 
-      <input type="date"
-        onChange={(e) => setTask({ ...task, dueDate: e.target.value })} />
+  <input
+    type="date"
+    onChange={(e) => setTask({ ...task, dueDate: e.target.value })}
+  />
 
-      <select
-        onChange={(e) => setTask({ ...task, status: e.target.value })}>
-        <option>Pending</option>
-        <option>Completed</option>
-      </select>
+  <select
+    onChange={(e) => setTask({ ...task, status: e.target.value })}
+  >
+    <option>Pending</option>
+    <option>Completed</option>
+  </select>
 
-      <button type="submit">Add Task</button>
-    </form>
+  <button className="btn-primary" type="submit">
+    Add Task
+  </button>
+</form>
   );
 }
 

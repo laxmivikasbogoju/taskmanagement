@@ -29,27 +29,49 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setForm({ ...form, password: e.target.value })}
-        />
-        <p onClick={() => navigate("/register")}>
-  Don't have an account? Register
-</p>
+  <div className="auth-wrapper">
+    <div className="auth-card">
+      <h2>Welcome Back</h2>
 
-        <button type="submit">Login</button>
+      <form onSubmit={handleSubmit}>
+        <div className="input-group">
+          <input
+            type="email"
+            placeholder=" "
+            required
+            onChange={(e) =>
+              setForm({ ...form, email: e.target.value })
+            }
+          />
+          <label>Email</label>
+        </div>
+
+        <div className="input-group">
+          <input
+            type="password"
+            placeholder=" "
+            required
+            onChange={(e) =>
+              setForm({ ...form, password: e.target.value })
+            }
+          />
+          <label>Password</label>
+        </div>
+
+        <button className="btn btn-login" type="submit">
+          Login
+        </button>
       </form>
+
+      <div
+        className="auth-link"
+        onClick={() => navigate("/register")}
+      >
+        Don’t have an account? Register
+      </div>
     </div>
-  );
+  </div>
+);
 }
 
 export default Login;

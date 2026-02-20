@@ -45,15 +45,24 @@ function Dashboard() {
   };
 
   return (
-    <div>
-      <h2>Dashboard</h2>
-      <button onClick={handleLogout}>Logout</button>
+  <div className="dashboard-container">
+    <div className="dashboard-header">
+      <h2>Task Dashboard</h2>
+      <button className="btn-danger" onClick={handleLogout}>
+        Logout
+      </button>
+    </div>
 
+    <div className="card">
       <TaskForm refresh={fetchTasks} />
+    </div>
+
+    <div className="card">
       {loading ? <p>Loading...</p> :
         <TaskList tasks={tasks} onDelete={handleDelete} />}
     </div>
-  );
+  </div>
+);
 }
 
 export default Dashboard;
