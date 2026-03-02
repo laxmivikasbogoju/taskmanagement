@@ -48,18 +48,21 @@ function Dashboard() {
   <div className="dashboard-container">
     <div className="dashboard-header">
       <h2>Task Dashboard</h2>
-      <button className="btn-danger" onClick={handleLogout}>
+      <button className="logout-btn" onClick={handleLogout}>
         Logout
       </button>
     </div>
 
-    <div className="card">
+    <div className="dashboard-card">
       <TaskForm refresh={fetchTasks} />
     </div>
 
-    <div className="card">
-      {loading ? <p>Loading...</p> :
-        <TaskList tasks={tasks} onDelete={handleDelete} />}
+    <div className="dashboard-card">
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <TaskList tasks={tasks} onDelete={handleDelete} />
+      )}
     </div>
   </div>
 );

@@ -3,8 +3,9 @@ import React from "react";
 function TaskList({ tasks, onDelete }) {
   return (
     <table>
+    
   <thead>
-    <tr>
+    <tr className="heading">
       <th>Title</th>
       <th>Status</th>
       <th>Due Date</th>
